@@ -149,6 +149,7 @@ let funcExpr: FuncType = function() {
 
 let asTyped = (() => '') as () => string;
 let castTyped = <() => string>(() => '');
+let satisfiesTyped = (() => '') satisfies () => string;
 
 interface ObjectType {
   foo(): number;

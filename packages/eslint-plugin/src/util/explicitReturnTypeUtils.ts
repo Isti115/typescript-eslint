@@ -1,7 +1,7 @@
 import type { TSESLint, TSESTree } from '@typescript-eslint/utils';
 import { AST_NODE_TYPES, ESLintUtils } from '@typescript-eslint/utils';
 
-import { isConstructor, isSetter, isTypeAssertion } from './astUtils';
+import { isConstructor, isSatisfiesAssertion, isSetter, isTypeAssertion } from './astUtils';
 import { getFunctionHeadLoc } from './getFunctionHeadLoc';
 
 type FunctionExpression =
@@ -195,6 +195,7 @@ function isTypedFunctionExpression(
 
   return (
     isTypeAssertion(parent) ||
+    isSatisfiesAssertion(parent) ||
     isVariableDeclaratorWithTypeAnnotation(parent) ||
     isPropertyDefinitionWithTypeAnnotation(parent) ||
     isPropertyOfObjectWithType(parent) ||

@@ -121,6 +121,10 @@ var funcExpr: Foo = function () {
       options: [{ allowTypedFunctionExpressions: true }],
     },
     {
+      code: 'const x = (() => {}) satisfies Foo;',
+      options: [{ allowTypedFunctionExpressions: true }],
+    },
+    {
       code: `
 const x = {
   foo: () => {},

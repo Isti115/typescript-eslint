@@ -58,6 +58,8 @@ const isTypeAssertion = isNodeOfTypes([
   AST_NODE_TYPES.TSTypeAssertion,
 ] as const);
 
+const isSatisfiesAssertion = isNodeOfType(AST_NODE_TYPES.TSSatisfiesExpression);
+
 const isVariableDeclarator = isNodeOfType(AST_NODE_TYPES.VariableDeclarator);
 
 const functionTypes = [
@@ -178,6 +180,7 @@ export {
   isNotOptionalChainPunctuator,
   isOptionalChainPunctuator,
   isOptionalCallExpression,
+  isSatisfiesAssertion,
   isSetter,
   isTSConstructorType,
   isTSFunctionType,
